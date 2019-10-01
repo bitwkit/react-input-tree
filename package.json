@@ -2,9 +2,14 @@
   "name": "react-input-tree",
   "version": "1.0.0",
   "description": "A flexible dialog form builder with automatic state update",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -23,6 +28,10 @@
   },
   "homepage": "https://github.com/bitwkit/react-input-tree#readme",
   "dependencies": {
+    "immutability-helper": "^3.0.1",
     "react": "^16.10.1"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2"
   }
 }
