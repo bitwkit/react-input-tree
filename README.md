@@ -1,2 +1,2 @@
 # react-input-tree
-A flexible dialog form builder whith automatic state update
+A flexible dialog form builder with automatic state update
