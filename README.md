@@ -8,7 +8,7 @@ This Javascript module introduces an InputTree component for React to build dial
 The whole dialog form structure along with values of inputs is stored in a state object of a single root component. This object represents DOM hierarchy in a slightly simplified way, as a tree of "nodes" which can be either html inputs or groups of nodes. Change handlers for all input elements in a tree are added automatically.
 
 ## Usage
-The concept and main steps are described below. **You can find a fully functional example [here](https://github.com/bitwkit/react-input-tree-example.git)**.
+The concept and main steps are described below. **You can find a fully functional [example here](https://github.com/bitwkit/react-input-tree-example.git)**.
 
 ### Step 0: import dependencies
 ```javascript
