@@ -17,12 +17,46 @@ import InputTree, {addChangeHandlers, getPrunedCopy} from 'react-input-tree';
 
 ### Step 1: describe dialog structure
 Form structure is described in a state object in an hierarchical way, as a "tree" of node objects.
-Nodes have three special properties: 'type', 'options' and 'value'.
+Nodes have three special properties: '*type*', '*options*' and '*value*'.
 Currently supported types:
-'Group': a group of nodes. All of its non-special properties are considered as references to child nodes of the group. 'value' property, if present, is also considered as a reference to a child node.
-'Checkbox', 'Range', 'RadioGroup', 'Text', 'Button': an input node with a 'value' property.
+* '*Group*': a group of nodes. All of its non-special properties are considered as references to child nodes of the group. 'value' property, if present, is also considered as a reference to a child node.
+* '*Checkbox*', '*Range*', '*RadioGroup*', '*Text*', '*Button*': an input node with a '*value*' property.
 
-Example of an object with initial state of a dialog form. You can use it as a reference for properties of different node types:
+Group node reference:
+```javascript
+{
+/* Group */ grp: {
+    type: 'Group',
+    options: {name: 'Group label', nodeClass: 'group-node-class'},
+    // rest of the properties should contain child nodes
+    prop1: { /* child node 1 */ },
+    prop2: { /* child node 2 */ },
+    // ...
+}
+}
+```
+
+Input nodes reference:
+```javascript
+{
+/* Checkbox */chk: {type: 'Checkbox', options: {name: 'Checkbox label', nodeClass: 'checkbox-node-class'}, value: true},
+/* Range */ rng: {type: 'Range', options: {name: 'Range label', nodeClass: 'range-node-class', min: 0, max: 100}, value: 0},
+/* Text */ txt: {type: 'Text', options: {name: 'Text label', nodeClass: 'text-node-class'}, value: 'default text'},
+/* RadioGroup */ rdo: {
+    type: 'RadioGroup',
+    options: {
+        name: 'RadioGroup label', nodeClass: 'radio-group-class', childClass: 'radio-item-class', itemsName: 'common-radio-items-name',
+        valueSet: {
+            value1: 'Option 1',
+            value2: 'Option 2'
+        }
+    },
+    value: 'value1'
+},
+/* Button */ btn: {type: 'Button', options: {name: 'Button label', nodeClass: 'button-node-class'} }
+```
+
+Example of an object with initial state of a dialog form:
 ```javascript
 this.state = {
     settings1: {
