@@ -1,6 +1,6 @@
 {
   "name": "react-input-tree",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A flexible dialog form builder with automatic state update",
   "main": "dist/index.js",
   "files": [
