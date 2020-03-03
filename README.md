@@ -1,3 +1,7 @@
+# Disclaimer
+Made as an exercise in React / WebPack along with NPM and some documentation writing, no serious use intended or suggested.
+
+
 # react-input-tree
 A flexible dialog form builder with automatic state update.
 
